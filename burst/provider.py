@@ -221,13 +221,20 @@ def process(provider, generator, filtering, has_special, verify_name=True, verif
             username = get_setting('%s_username' % provider, str)
             password = get_setting('%s_password' % provider, str)
             passkey = get_setting('%s_passkey' % provider, str)
+            if not passkey and username and 'USERNAME' not in url_search and 'login_passkey' in definition and definition['login_passkey']:
+                passkey = username
             if username:
                 client.username = username
                 url_search = url_search.replace('USERNAME', username)
 
             if passkey:
+                passkey = re.sub(r'^Bearer\s+', '', passkey.strip(), flags=re.IGNORECASE)
                 client.passkey = passkey
                 url_search = url_search.replace('PASSKEY', passkey)
+            elif 'login_passkey' in definition and definition['login_passkey']:
+                log.error("[%s] Passkey / API token is not configured" % provider)
+                add_error(translation(32169).format(definition['name']))
+                return filtering.results
 
             elif 'login_object' in definition and definition['login_object']:
                 login_object = None

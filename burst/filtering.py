@@ -427,13 +427,13 @@ class Filtering:
                         text = text.replace('{%s}' % keyword, str(self.info['years'][use_language]))
 
             if 'show_tmdb_id' in keyword:
-                if 'show_tmdb_id' not in self.info:
+                if 'show_tmdb_id' not in self.info or not self.info['show_tmdb_id'] or str(self.info['show_tmdb_id']) == '0':
                     self.info['show_tmdb_id'] = ''
 
                 text = text.replace('{%s}' % keyword, str(self.info["show_tmdb_id"]))
 
-            if 'tmdb_id' in keyword:
-                if 'tmdb_id' not in self.info:
+            elif 'tmdb_id' in keyword:
+                if 'tmdb_id' not in self.info or not self.info['tmdb_id'] or str(self.info['tmdb_id']) == '0':
                     self.info['tmdb_id'] = ''
 
                 text = text.replace('{%s}' % keyword, str(self.info["tmdb_id"]))

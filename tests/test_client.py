@@ -38,6 +38,8 @@ sys.modules['xbmcvfs'].translatePath = lambda path: path
 sys.modules['xbmc'].translatePath = lambda path: path
 sys.modules['elementum.provider'].log = types.SimpleNamespace(debug=lambda *a: None, info=lambda *a: None, error=lambda *a: None, warning=lambda *a: None)
 sys.modules['elementum.provider'].get_setting = _get_setting
+sys.modules['elementum.provider'].set_setting = lambda *a: None
+sys.modules['elementum.provider'].append_headers = lambda uri, headers: uri
 
 from burst.client import Client  # noqa: E402
 
@@ -96,6 +98,58 @@ def test_api_headers():
     headers = _headers(Client(is_api=True), 'https://api.site.org/v1')
     assert 'Sec-Fetch-Mode' not in headers
     assert 'Referer' not in headers
+
+
+def test_vietmediaf_provider_definition_and_api_extraction():
+    import json
+    from burst.providers.definitions import definitions
+    from burst.burst import extract_from_api
+
+    assert 'vietmediaf' in definitions
+    vmf = definitions['vietmediaf']
+    assert vmf['enabled'] is True
+    assert vmf['private'] is True
+    assert vmf['is_api'] is True
+    assert vmf['login_passkey'] is True
+    assert vmf['base_url'] == 'https://tracker.vietmediaf.store/api/torrents/filter'
+
+    client = Client(is_api=True)
+    client.passkey = 'test_api_key_123'
+    client.content = json.dumps({
+        'data': [
+            {
+                'id': '101',
+                'attributes': {
+                    'name': 'Example.Movie.2026.ViE.DUB.2160p.WEB-DL.DV.HDR.H.265-VMF',
+                    'size': 10737418240,
+                    'seeders': 12,
+                    'leechers': 2,
+                    'freeleech': '100%',
+                    'download_link': 'https://tracker.vietmediaf.store/torrent/download/101.rsskey123'
+                }
+            },
+            {
+                'id': '102',
+                'attributes': {
+                    'name': 'Example.Movie.2026.ViE.1080p.WEB-DL.H.264-VMF',
+                    'size': 4294967296,
+                    'seeders': 8,
+                    'leechers': 0,
+                    'freeleech': '0%',
+                    'download_link': 'https://tracker.vietmediaf.store/torrent/download/102.rsskey123'
+                }
+            }
+        ]
+    })
+    items = list(extract_from_api('vietmediaf', client))
+    assert len(items) == 2
+    assert items[0][0] == 'Example.Movie.2026.ViE.DUB.2160p.WEB-DL.DV.HDR.H.265-VMF'
+    assert items[0][2] == 'https://tracker.vietmediaf.store/torrent/download/101.rsskey123'
+    assert items[0][3] == '10.0 GB'
+    assert items[0][4] == 12
+    assert items[0][5] == 2
+    assert items[0][6] == 'ViE DUB · FL'
+    assert items[1][6] == 'ViE'
 
 
 if __name__ == '__main__':

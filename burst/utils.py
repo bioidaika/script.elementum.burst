@@ -126,12 +126,13 @@ def get_alias(definition, alias):
                         definition[k] = definition[k].replace("http://", protocol + "://")
                         definition[k] = definition[k].replace("https://", protocol + "://")
 
-            for k in definition["parser"]:
-                if isinstance(definition["parser"][k], str):
-                    definition["parser"][k] = definition["parser"][k].replace(old_domain, new_domain)
-                    if protocol:
-                        definition["parser"][k] = definition["parser"][k].replace("http://", protocol + "://")
-                        definition["parser"][k] = definition["parser"][k].replace("https://", protocol + "://")
+            if "parser" in definition and definition["parser"]:
+                for k in definition["parser"]:
+                    if isinstance(definition["parser"][k], str):
+                        definition["parser"][k] = definition["parser"][k].replace(old_domain, new_domain)
+                        if protocol:
+                            definition["parser"][k] = definition["parser"][k].replace("http://", protocol + "://")
+                            definition["parser"][k] = definition["parser"][k].replace("https://", protocol + "://")
 
     return definition
 
