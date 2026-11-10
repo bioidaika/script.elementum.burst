@@ -31,6 +31,7 @@ languages = {
     'lt': 32127,
     'by': 32135,
     'ar': 32142,
+    'vi': 32183,
 }
 
 def char_range(c1, c2):
@@ -125,15 +126,23 @@ def store_providers(path):
     for p in private:
         private_count += 1
 
-        auth = ""
-        if 'login_passkey' not in p or not p['login_passkey']:
-            auth = """<setting id="{id}_username" label="32015" type="text" default="" subsetting="true" visible="eq(-1,true)" />
-      <setting id="{id}_password" label="32016" type="text" default="" option="hidden" subsetting="true" visible="eq(-2,true)" />""".format(id=p['id'])
+        if 'login_apikey' in p and p['login_apikey']:
+            item = u"""
+    <setting label="{name}" id="use_{id}" type="bool" default="{default}" />
+      <setting id="{id}_passkey" label="32182" type="text" default="" option="hidden" subsetting="true" visible="eq(-1,true)" />
+      <setting id="{id}_alias" label="32077" type="text" default="" subsetting="true" visible="eq(-2,true)" />
+      <setting id="{id}_contains" type="enum" label="32080" subsetting="true" lvalues="32081|32082|32083" visible="eq(-3,true)" />
+""".format(id=p['id'], name=p['name'], default=str(p['predefined']).lower())
         else:
-            auth = """<setting id="{id}_username" label="32015" type="text" default="" subsetting="true" visible="eq(-1,true)" />
+            auth = ""
+            if 'login_passkey' not in p or not p['login_passkey']:
+                auth = """<setting id="{id}_username" label="32015" type="text" default="" subsetting="true" visible="eq(-1,true)" />
+      <setting id="{id}_password" label="32016" type="text" default="" option="hidden" subsetting="true" visible="eq(-2,true)" />""".format(id=p['id'])
+            else:
+                auth = """<setting id="{id}_username" label="32015" type="text" default="" subsetting="true" visible="eq(-1,true)" />
       <setting id="{id}_passkey" label="32076" type="text" default="" option="hidden" subsetting="true" visible="eq(-2,true)" />""".format(id=p['id'])
 
-        item = u"""
+            item = u"""
     <setting label="{name}" id="use_{id}" type="bool" default="{default}" />
       {auth}
       <setting id="{id}_alias" label="32077" type="text" default="" subsetting="true" visible="eq(-3,true)" />

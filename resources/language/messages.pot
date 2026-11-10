@@ -534,3 +534,11 @@ msgstr ""
 msgctxt "#32181"
 msgid "Season and episode"
 msgstr ""
+
+msgctxt "#32182"
+msgid "API key"
+msgstr ""
+
+msgctxt "#32183"
+msgid "Vietnamese"
+msgstr ""

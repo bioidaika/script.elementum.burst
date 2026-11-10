@@ -110,8 +110,9 @@ def test_vietmediaf_provider_definition_and_api_extraction():
     assert vmf['enabled'] is True
     assert vmf['private'] is True
     assert vmf['is_api'] is True
-    assert vmf['login_passkey'] is True
+    assert vmf['login_apikey'] is True
     assert vmf['base_url'] == 'https://tracker.vietmediaf.store/api/torrents/filter'
+    assert definitions['seedpool']['login_apikey'] is True
 
     client = Client(is_api=True)
     client.passkey = 'test_api_key_123'
