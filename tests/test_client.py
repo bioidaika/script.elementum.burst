@@ -152,6 +152,30 @@ def test_vietmediaf_provider_definition_and_api_extraction():
     assert items[0][6] == 'ViE DUB · FL'
     assert items[1][6] == 'ViE'
 
+    unit3d_providers = [k for k, v in definitions.items() if v.get('login_apikey')]
+    assert len(unit3d_providers) == 45
+
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+    with open(os.path.join(repo_root, 'resources', 'settings.xml'), 'r', encoding='utf-8') as f:
+        settings_xml = f.read()
+
+    for pid in unit3d_providers:
+        pdef = definitions[pid]
+        assert pdef['enabled'] is True
+        assert pdef['private'] is True
+        assert pdef['is_api'] is True
+        assert pdef['base_url'].endswith('/api/torrents/filter')
+        assert 'Bearer ' in pdef['headers']
+        assert os.path.isfile(os.path.join(repo_root, 'burst', 'providers', 'icons', '%s.png' % pid))
+        assert 'id="%s_passkey" label="32182"' % pid in settings_xml
+        assert 'id="%s_username"' % pid not in settings_xml
+
+    aither_items = list(extract_from_api('aither', client))
+    assert len(aither_items) == 2
+    assert aither_items[0][6] == 'FL'
+    assert aither_items[1][6] == ''
+
+
 
 if __name__ == '__main__':
     for name, test in list(globals().items()):

@@ -540,3 +540,15 @@ msgstr ""
 msgctxt "#32183"
 msgid "Vietnamese"
 msgstr ""
+
+msgctxt "#32184"
+msgid "Spanish"
+msgstr "Spanish"
+
+msgctxt "#32185"
+msgid "Portuguese"
+msgstr "Portuguese"
+
+msgctxt "#32186"
+msgid "Croatian"
+msgstr "Croatian"

@@ -604,13 +604,14 @@ def extract_from_api(provider, client):
             source = match.group(1).strip() if match else ''
             # Magnet trackers come as 'tracker:<url>' in sources
             trackers = ''.join('&tr=' + quote(s[8:], safe='') for s in result.get('sources') or [] if isinstance(s, str) and s.startswith('tracker:'))
-        elif provider == 'vietmediaf':
-            item_name = get_nested_value(result, 'attributes.name', '') or ''
+        elif definition.get('login_apikey'):
             badges = []
-            if re.search(r'(?<![A-Za-z0-9])ViE[ .-]+DUB(?![A-Za-z0-9])', item_name, re.IGNORECASE):
-                badges.append('ViE DUB')
-            elif re.search(r'(?<![A-Za-z0-9])ViE(?![A-Za-z0-9])', item_name, re.IGNORECASE):
-                badges.append('ViE')
+            if provider == 'vietmediaf':
+                item_name = get_nested_value(result, 'attributes.name', '') or ''
+                if re.search(r'(?<![A-Za-z0-9])ViE[ .-]+DUB(?![A-Za-z0-9])', item_name, re.IGNORECASE):
+                    badges.append('ViE DUB')
+                elif re.search(r'(?<![A-Za-z0-9])ViE(?![A-Za-z0-9])', item_name, re.IGNORECASE):
+                    badges.append('ViE')
             fl = get_nested_value(result, 'attributes.freeleech', '')
             if fl and fl != '0%':
                 badges.append('%s FL' % fl if fl != '100%' else 'FL')

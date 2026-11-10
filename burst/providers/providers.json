@@ -140,6 +140,125 @@
         "tv_keywords": "",
         "tv_keywords2": ""
     },
+    "aither": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://aither.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF00BCD4",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Aither",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://aither.cc",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "anidub": {
+        "anime_keywords": "{title:ru:jp}",
+        "base_url": "https://tr.anidub.com/",
+        "post_data": "{'story': 'QUERY', 'do': 'search', 'subaction': 'search'}",
+        "color": "FFFFFFFF",
+        "enabled": true,
+        "general_keywords": "{title}",
+        "language": "ru",
+        "languages": "ru",
+        "movie_keywords": "{title:ru:jp}",
+        "name": "есть реклама, AniDUB",
+        "parser": {
+            "infohash": "",
+            "name": "item(tag='h2')",
+            "description": "'WebDL 1080p'",
+            "peers": "",
+            "row": "find_all(tag='div', select=('class', 'search_post'))",
+            "seeds": "1",
+            "size": "",
+            "torrent": "item(tag='a', attribute='href')"
+        },
+        "predefined": false,
+        "private": false,
+        "season_keywords": "{title:ru:jp}",
+        "separator": "+",
+        "subpage": true,
+        "tv_keywords": "{title:ru:jp}"
+    },
     "anilibria": {
         "anime_keywords": "{title:ru:jp}",
         "base_url": "https://api.anilibria.tv/v3/title/search?search=QUERY&filter=names,torrents&limit=15",
@@ -168,34 +287,6 @@
         "season_keywords": "{title:ru:jp}",
         "separator": "%20",
         "subpage": false,
-        "tv_keywords": "{title:ru:jp}"
-    },
-    "anidub": {
-        "anime_keywords": "{title:ru:jp}",
-        "base_url": "https://tr.anidub.com/",
-        "post_data": "{'story': 'QUERY', 'do': 'search', 'subaction': 'search'}",
-        "color": "FFFFFFFF",
-        "enabled": true,
-        "general_keywords": "{title}",
-        "language": "ru",
-        "languages": "ru",
-        "movie_keywords": "{title:ru:jp}",
-        "name": "есть реклама, AniDUB",
-        "parser": {
-            "infohash": "",
-            "name": "item(tag='h2')",
-            "description": "'WebDL 1080p'",
-            "peers": "",
-            "row": "find_all(tag='div', select=('class', 'search_post'))",
-            "seeds": "1",
-            "size": "",
-            "torrent": "item(tag='a', attribute='href')"
-        },
-        "predefined": false,
-        "private": false,
-        "season_keywords": "{title:ru:jp}",
-        "separator": "+",
-        "subpage": true,
         "tv_keywords": "{title:ru:jp}"
     },
     "animaunt": {
@@ -304,6 +395,97 @@
         "tv_keywords_fallback": "{title} s{season:2}",
         "tv_keywords_fallback2": "{title} season {season}",
         "tv_keywords_fallback3": "{title} {season:2}x01"
+    },
+    "asiancinema": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://eiga.moi/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFE91E63",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "int, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "AsianCinema",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://eiga.moi",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "baibako": {
         "anime_extra": "",
@@ -433,6 +615,97 @@
         "tv_keywords2": "{title:original} {season:2}x01|S{season:2}",
         "tv_keywords_fallback": "{title:original} s{season:2}"
     },
+    "bitporn": {
+        "anime_extra": [
+            "tmdbId",
+            "name",
+            "name",
+            "name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://bitporn.eu/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFF4081",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "tmdbId",
+            "name",
+            "name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "BitPorn",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://bitporn.eu",
+        "season_extra": [
+            "tmdbId",
+            "name",
+            "name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "tmdbId",
+            "name",
+            "name",
+            "name",
+            "name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "bitsearch": {
         "anime_extra": "",
         "anime_keywords": "{title:original:en} s{season:2}e{episode:2}",
@@ -483,6 +756,141 @@
         "tv_keywords_fallback2": "{title:original:en} season {season}",
         "tv_keywords_fallback3": "{title:original:en} {season:2}x01"
     },
+    "bluebird": {
+        "anime_keywords": "{title:original} s{season:2}e{episode:2}",
+        "anime_keywords_fallback": "{title:original} Сезон {season}",
+        "base_url": "https://bluebird-hd.org/browse.php?webdl=0&3d=0&search=QUERYEXTRA&incldead=0&dsearch=&stype=and&sort=7&type=desc",
+        "charset": "windows-1251",
+        "color": "FFFFFFFF",
+        "enabled": true,
+        "general_extra": "",
+        "general_keywords": "{title:original}",
+        "general_query": "",
+        "language": null,
+        "languages": "ru",
+        "login_failed": "Ошибка",
+        "login_object": "{'username': USERNAME, 'password': PASSWORD, 'returnto': '/browse.php'}",
+        "login_path": "/takelogin.php",
+        "movie_extra": "",
+        "movie_keywords": "{title:original} ({year})",
+        "movie_query": "",
+        "name": "BlueBird",
+        "parser": {
+            "infohash": "",
+            "name": "item('a', order=3)",
+            "peers": "item(tag='td', order=8)",
+            "row": "find_once('tbody', ('id', 'highlighted'), order=1).find_all('tr', start=1)",
+            "seeds": "item(tag='td', order=7)",
+            "size": "item('td', order=9)",
+            "torrent": "'https://bluebird-hd.org/%s' % item(tag='a', attribute='href', order=3).replace('details.php', 'download.php')"
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://bluebird-hd.org/",
+        "season_extra": "",
+        "season_extra2": "",
+        "season_keywords": "{title:original} Сезон {season}",
+        "season_keywords2": "{title:original} S{season:2}",
+        "season_query": "",
+        "separator": "+",
+        "show_query": "",
+        "subpage": false,
+        "tv_extra": "",
+        "tv_extra2": "",
+        "tv_keywords": "{title:original} s{season:2}e{episode:2}",
+        "tv_keywords_fallback": "{title:original} Сезон {season}"
+    },
+    "blutopia": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://blutopia.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF2196F3",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&categories[]=3&tmdbId",
+            "categories[]=1&categories[]=3&name",
+            "categories[]=1&categories[]=3&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Blutopia",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://blutopia.cc",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "bt4g": {
         "anime_extra": "",
         "anime_keywords": "{title:original:en} s{season:2}e{episode:2}",
@@ -528,139 +936,197 @@
         "tv_keywords_fallback3": "{title:original:en} {season:2}x01",
         "show_query": ""
     },
-    "helltorrents": {
-        "anime_extra": null,
-        "anime_keywords": "{title:original} s{season:2}e{episode:2}",
-        "anime_keywords2": "{title:original} {season:2}x01|S{season:2}",
-        "anime_keywords_fallback": "{title:original} s{season:2}",
-        "base_url": "https://helltorrents.com/torrents.php?search=QUERY",
-        "color": "FFFFFFFF",
+    "capybarabr": {
+        "anime_extra": [
+            "categories[]=4&categories[]=2&tmdbId",
+            "categories[]=4&categories[]=2&name",
+            "categories[]=4&categories[]=2&name",
+            "categories[]=4&categories[]=2&name",
+            "categories[]=4&categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://capybarabr.com/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF4CAF50",
         "enabled": true,
-        "general_extra": "",
+        "general_extra": "name",
         "general_keywords": "{title:original}",
-        "general_query": "",
-        "language": null,
-        "languages": "pl",
-        "login_failed": "Forgot your password?",
-        "login_object": "{'uid': USERNAME, 'pwd': PASSWORD}",
-        "login_path": "/login.php",
-        "movie_extra": "",
-        "movie_keywords": "{title:original} {year}",
-        "movie_query": "",
-        "name": "helltorrents",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "pt",
+        "languages": "pt, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:pt} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "CapybaraBR",
         "parser": {
             "infohash": "",
-            "name": "item(tag='a', order=2)",
-            "peers": "item(tag='td', order=6)",
-            "row": "find_once('table', ('id', 'searchRes')).find_all('tr', start=2)",
-            "seeds": "item(tag='td', order=5)",
-            "size": "item(tag='td', order=4)",
-            "torrent": "'https://helltorrents.com/%s/' % item(tag='a', attribute='id', order=4).replace('_','/')"
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
         },
         "predefined": false,
         "private": true,
-        "season_extra": "",
-        "season_extra2": "",
-        "season_keywords": "{title:original} s{season:2}",
-        "season_keywords2": "",
-        "season_query": "",
-        "separator": "+",
-        "show_query": "",
-        "subpage": true,
-        "tv_extra": "",
-        "tv_extra2": "",
-        "tv_keywords": "{title:original} s{season:2}e{episode:2}",
-        "tv_keywords2": "{title:original} {season:2}x01|S{season:2}",
-        "tv_keywords_fallback": "{title:original} s{season:2}"
-    },
-    "electrotorrent": {
-        "anime_extra": null,
-        "anime_keywords": "{title:original} s{season:2}e{episode:2}",
-        "anime_keywords2": "{title:original} {season:2}x01|S{season:2}",
-        "anime_keywords_fallback": "{title:original} s{season:2}",
-        "base_url": "https://electro-torrent.pl/szukaj.php?search=QUERY&cat=0",
-        "color": "FFFFFFFF",
-        "enabled": true,
-        "general_extra": "",
-        "general_keywords": "{title:original}",
-        "general_query": "",
-        "language": null,
-        "languages": "pl",
-        "login_failed": "Logowanie nie",
-        "login_object": "{'username': USERNAME, 'password': PASSWORD}",
-        "login_path": "/takelogin.php",
-        "movie_extra": "",
-        "movie_keywords": "{title:original} {year}",
-        "movie_query": "",
-        "name": "electroTorrent",
-        "parser": {
-            "infohash": "",
-            "name": "item(tag='a', select=('class', 'nazwa-torrenta'))",
-            "peers": "item(tag='font', order=3)",
-            "row": "find_once('table', ('class', 'test5')).find_all('div')",
-            "seeds": "item(tag='font', order=2)",
-            "size": "re.search(r'Rozmiar: (.*?)\\n', item(tag='td', select=('class', 'descr3'))).group(1)",
-            "torrent": "'https://electro-torrent.pl/download/%s' % item(tag='a', select=('class', 'nazwa-torrenta'), attribute='href', order=1).split('/')[-1]"
-        },
-        "predefined": false,
-        "private": true,
-        "season_extra": "",
-        "season_extra2": "",
-        "season_keywords": "{title:original} s{season:2}",
-        "season_keywords2": "",
-        "season_query": "",
-        "separator": "+",
-        "show_query": "",
+        "root_url": "https://capybarabr.com",
+        "season_extra": [
+            "categories[]=2&categories[]=4&tmdbId",
+            "categories[]=2&categories[]=4&name",
+            "categories[]=2&categories[]=4&name",
+            "categories[]=2&categories[]=4&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
         "subpage": false,
-        "tv_extra": "",
-        "tv_extra2": "",
-        "tv_keywords": "{title:original} s{season:2}e{episode:2}",
-        "tv_keywords2": "{title:original} {season:2}x01|S{season:2}",
-        "tv_keywords_fallback": "{title:original} s{season:2}"
+        "tv_extra": [
+            "categories[]=2&categories[]=4&tmdbId",
+            "categories[]=2&categories[]=4&name",
+            "categories[]=2&categories[]=4&name",
+            "categories[]=2&categories[]=4&name",
+            "categories[]=2&categories[]=4&name",
+            "categories[]=2&categories[]=4&name",
+            "categories[]=2&categories[]=4&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
-    "bluebird": {
-        "anime_keywords": "{title:original} s{season:2}e{episode:2}",
-        "anime_keywords_fallback": "{title:original} Сезон {season}",
-        "base_url": "https://bluebird-hd.org/browse.php?webdl=0&3d=0&search=QUERYEXTRA&incldead=0&dsearch=&stype=and&sort=7&type=desc",
-        "charset": "windows-1251",
-        "color": "FFFFFFFF",
+    "cinematik": {
+        "anime_extra": [
+            "categories[]=2&categories[]=4&categories[]=5&tmdbId",
+            "categories[]=2&categories[]=4&categories[]=5&name",
+            "categories[]=2&categories[]=4&categories[]=5&name",
+            "categories[]=2&categories[]=4&categories[]=5&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://cinematik.net/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFFC107",
         "enabled": true,
-        "general_extra": "",
+        "general_extra": "name",
         "general_keywords": "{title:original}",
-        "general_query": "",
-        "language": null,
-        "languages": "ru",
-        "login_failed": "Ошибка",
-        "login_object": "{'username': USERNAME, 'password': PASSWORD, 'returnto': '/browse.php'}",
-        "login_path": "/takelogin.php",
-        "movie_extra": "",
-        "movie_keywords": "{title:original} ({year})",
-        "movie_query": "",
-        "name": "BlueBird",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "int, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&categories[]=3&categories[]=5&categories[]=6&tmdbId",
+            "categories[]=1&categories[]=3&categories[]=5&categories[]=6&name",
+            "categories[]=1&categories[]=3&categories[]=5&categories[]=6&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Cinematik",
         "parser": {
             "infohash": "",
-            "name": "item('a', order=3)",
-            "peers": "item(tag='td', order=8)",
-            "row": "find_once('tbody', ('id', 'highlighted'), order=1).find_all('tr', start=1)",
-            "seeds": "item(tag='td', order=7)",
-            "size": "item('td', order=9)",
-            "torrent": "'https://bluebird-hd.org/%s' % item(tag='a', attribute='href', order=3).replace('details.php', 'download.php')"
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
         },
         "predefined": false,
         "private": true,
-        "root_url": "https://bluebird-hd.org/",
-        "season_extra": "",
-        "season_extra2": "",
-        "season_keywords": "{title:original} Сезон {season}",
-        "season_keywords2": "{title:original} S{season:2}",
-        "season_query": "",
-        "separator": "+",
-        "show_query": "",
+        "root_url": "https://cinematik.net",
+        "season_extra": [
+            "categories[]=2&categories[]=4&categories[]=5&tmdbId",
+            "categories[]=2&categories[]=4&categories[]=5&name",
+            "categories[]=2&categories[]=4&categories[]=5&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
         "subpage": false,
-        "tv_extra": "",
-        "tv_extra2": "",
-        "tv_keywords": "{title:original} s{season:2}e{episode:2}",
-        "tv_keywords_fallback": "{title:original} Сезон {season}"
+        "tv_extra": [
+            "categories[]=2&categories[]=4&categories[]=5&tmdbId",
+            "categories[]=2&categories[]=4&categories[]=5&name",
+            "categories[]=2&categories[]=4&categories[]=5&name",
+            "categories[]=2&categories[]=4&categories[]=5&name",
+            "categories[]=2&categories[]=4&categories[]=5&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "cpasbien": {
         "anime_extra": "",
@@ -707,6 +1173,334 @@
         "tv_keywords": "{title:fr} s{season:2}e{episode:2}",
         "tv_keywords2": "{title:fr} {season:2}x01|S{season:2}",
         "tv_keywords_fallback": "{title:fr} s{season:2}"
+    },
+    "darkpeers": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://darkpeers.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF9C27B0",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "DarkPeers",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://darkpeers.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "dreadvault": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://dreadvault.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFF44336",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "DreadVault",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://dreadvault.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "electrotorrent": {
+        "anime_extra": null,
+        "anime_keywords": "{title:original} s{season:2}e{episode:2}",
+        "anime_keywords2": "{title:original} {season:2}x01|S{season:2}",
+        "anime_keywords_fallback": "{title:original} s{season:2}",
+        "base_url": "https://electro-torrent.pl/szukaj.php?search=QUERY&cat=0",
+        "color": "FFFFFFFF",
+        "enabled": true,
+        "general_extra": "",
+        "general_keywords": "{title:original}",
+        "general_query": "",
+        "language": null,
+        "languages": "pl",
+        "login_failed": "Logowanie nie",
+        "login_object": "{'username': USERNAME, 'password': PASSWORD}",
+        "login_path": "/takelogin.php",
+        "movie_extra": "",
+        "movie_keywords": "{title:original} {year}",
+        "movie_query": "",
+        "name": "electroTorrent",
+        "parser": {
+            "infohash": "",
+            "name": "item(tag='a', select=('class', 'nazwa-torrenta'))",
+            "peers": "item(tag='font', order=3)",
+            "row": "find_once('table', ('class', 'test5')).find_all('div')",
+            "seeds": "item(tag='font', order=2)",
+            "size": "re.search(r'Rozmiar: (.*?)\\n', item(tag='td', select=('class', 'descr3'))).group(1)",
+            "torrent": "'https://electro-torrent.pl/download/%s' % item(tag='a', select=('class', 'nazwa-torrenta'), attribute='href', order=1).split('/')[-1]"
+        },
+        "predefined": false,
+        "private": true,
+        "season_extra": "",
+        "season_extra2": "",
+        "season_keywords": "{title:original} s{season:2}",
+        "season_keywords2": "",
+        "season_query": "",
+        "separator": "+",
+        "show_query": "",
+        "subpage": false,
+        "tv_extra": "",
+        "tv_extra2": "",
+        "tv_keywords": "{title:original} s{season:2}e{episode:2}",
+        "tv_keywords2": "{title:original} {season:2}x01|S{season:2}",
+        "tv_keywords_fallback": "{title:original} s{season:2}"
+    },
+    "emuwarez": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:es} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://emuwarez.com/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFF9800",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "es",
+        "languages": "es, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:es} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "eMuwarez",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://emuwarez.com",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:es} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:es} s{season:2}e{episode:2}",
+            "{title:es} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "ettv": {
         "anime_extra": "",
@@ -1120,6 +1914,97 @@
         "tv_keywords_fallback2": "{title:en} season {season}",
         "tv_keywords_fallback3": "{title:en} {season:2}x01"
     },
+    "hawkeuno": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://hawke.uno/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF00E5FF",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Hawke-Uno",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://hawke.uno",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "hd-torrents": {
         "anime_keywords": "{title} s{season:2}e{episode:2}",
         "anime_keywords2": "{title} {season:2}x01|S{season:2}",
@@ -1166,6 +2051,142 @@
         "tv_keywords": "{title} s{season:2}e{episode:2}",
         "tv_keywords2": "{title} {season:2}x01|S{season:2}",
         "tv_keywords_fallback": "{title} s{season:2}"
+    },
+    "helltorrents": {
+        "anime_extra": null,
+        "anime_keywords": "{title:original} s{season:2}e{episode:2}",
+        "anime_keywords2": "{title:original} {season:2}x01|S{season:2}",
+        "anime_keywords_fallback": "{title:original} s{season:2}",
+        "base_url": "https://helltorrents.com/torrents.php?search=QUERY",
+        "color": "FFFFFFFF",
+        "enabled": true,
+        "general_extra": "",
+        "general_keywords": "{title:original}",
+        "general_query": "",
+        "language": null,
+        "languages": "pl",
+        "login_failed": "Forgot your password?",
+        "login_object": "{'uid': USERNAME, 'pwd': PASSWORD}",
+        "login_path": "/login.php",
+        "movie_extra": "",
+        "movie_keywords": "{title:original} {year}",
+        "movie_query": "",
+        "name": "helltorrents",
+        "parser": {
+            "infohash": "",
+            "name": "item(tag='a', order=2)",
+            "peers": "item(tag='td', order=6)",
+            "row": "find_once('table', ('id', 'searchRes')).find_all('tr', start=2)",
+            "seeds": "item(tag='td', order=5)",
+            "size": "item(tag='td', order=4)",
+            "torrent": "'https://helltorrents.com/%s/' % item(tag='a', attribute='id', order=4).replace('_','/')"
+        },
+        "predefined": false,
+        "private": true,
+        "season_extra": "",
+        "season_extra2": "",
+        "season_keywords": "{title:original} s{season:2}",
+        "season_keywords2": "",
+        "season_query": "",
+        "separator": "+",
+        "show_query": "",
+        "subpage": true,
+        "tv_extra": "",
+        "tv_extra2": "",
+        "tv_keywords": "{title:original} s{season:2}e{episode:2}",
+        "tv_keywords2": "{title:original} {season:2}x01|S{season:2}",
+        "tv_keywords_fallback": "{title:original} s{season:2}"
+    },
+    "homiehelpdesk": {
+        "anime_extra": [
+            "categories[]=3&categories[]=2&tmdbId",
+            "categories[]=3&categories[]=2&name",
+            "categories[]=3&categories[]=2&name",
+            "categories[]=3&categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://homiehelpdesk.net/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF8BC34A",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "HomieHelpDesk",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://homiehelpdesk.net",
+        "season_extra": [
+            "categories[]=2&categories[]=3&tmdbId",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&categories[]=3&tmdbId",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "idope": {
         "anime_extra": "",
@@ -1359,6 +2380,97 @@
         "tv_keywords2": "{title:it} {season:2}x01|S{season:2}",
         "tv_keywords_fallback": "{title:it} s{season:2}"
     },
+    "infinityhd": {
+        "anime_extra": [
+            "categories[]=3&categories[]=4&tmdbId",
+            "categories[]=3&categories[]=4&name",
+            "categories[]=3&categories[]=4&name",
+            "categories[]=3&categories[]=4&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://infinityhd.net/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF3F51B5",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&categories[]=4&tmdbId",
+            "categories[]=1&categories[]=4&name",
+            "categories[]=1&categories[]=4&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "InfinityHD",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://infinityhd.net",
+        "season_extra": [
+            "categories[]=2&categories[]=3&tmdbId",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&categories[]=3&tmdbId",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "iptorrents": {
         "anime_extra": "",
         "anime_keywords": "{title:original} s{season:2}e{episode:2}",
@@ -1402,6 +2514,107 @@
         "tv_extra2": "",
         "tv_keywords": "{title:original} s{season:2}e{episode:2}",
         "tv_keywords_fallback": "{title:original} s{season:2}"
+    },
+    "itatorrents": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:it} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://itatorrents.xyz/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF4CAF50",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "it",
+        "languages": "it, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:it} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "ItaTorrents",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://itatorrents.xyz",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:it} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:it} s{season:2}e{episode:2}",
+            "{title:it} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "itorrent": {
         "anime_keywords": "{title:original:en:hu} s{season:2}e{episode:2}",
@@ -1591,6 +2804,198 @@
         "tv_keywords_fallback2": "{title:original:en} season {season}",
         "tv_keywords_fallback3": "{title:original:en} {season:2}x01"
     },
+    "lastdigitalunderground": {
+        "anime_extra": [
+            "tmdbId",
+            "name",
+            "name",
+            "name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://theldu.to/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFAB47BC",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "tmdbId",
+            "name",
+            "name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "LastDigitalUnderground",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://theldu.to",
+        "season_extra": [
+            "tmdbId",
+            "name",
+            "name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "tmdbId",
+            "name",
+            "name",
+            "name",
+            "name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "latteam": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:es} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://lat-team.com/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFFB300",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "es",
+        "languages": "es, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:es} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Lat-Team",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://lat-team.com",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:es} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:es} s{season:2}e{episode:2}",
+            "{title:es} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "leproduction": {
         "anime_keywords": "{title:ru:en}",
         "base_url": "https://le-production.tv/",
@@ -1712,6 +3117,107 @@
         "tv_keywords2": "+{title:original:en} s{season:2}",
         "tv_keywords_fallback": "+{title:original:en}"
     },
+    "locadora": {
+        "anime_extra": [
+            "categories[]=6&categories[]=2&tmdbId",
+            "categories[]=6&categories[]=2&name",
+            "categories[]=6&categories[]=2&name",
+            "categories[]=6&categories[]=2&name",
+            "categories[]=6&categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://locadora.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF26A69A",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "pt",
+        "languages": "pt, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:pt} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Locadora",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://locadora.cc",
+        "season_extra": [
+            "categories[]=2&categories[]=6&tmdbId",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&categories[]=6&tmdbId",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "lostfilm": {
         "anime_extra": "",
         "anime_keywords": "",
@@ -1755,6 +3261,188 @@
         "tv_extra2": "",
         "tv_keywords": "{title:en}/season_{season}/episode_{episode}",
         "tv_keywords2": ""
+    },
+    "lst": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://lst.gg/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF42A5F5",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "LST",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://lst.gg",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "luminarr": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://luminarr.me/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFFCA28",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Luminarr",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://luminarr.me",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "magnetdl": {
         "anime_keywords": "{title:original} s{season:2}e{episode:2}",
@@ -1846,6 +3534,97 @@
         "tv_extra2": "",
         "tv_keywords": "{title:original} {season} Сезон",
         "tv_keywords_fallback": "{title:original}"
+    },
+    "midnightscene": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://midnightscene.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF7E57C2",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "MidnightScene",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://midnightscene.cc",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "mvgroup": {
         "anime_keywords": "{title} s{season:2}e{episode:2}",
@@ -2128,6 +3907,97 @@
         "tv_keywords_fallback": "{title:original} s{season:2}e{episode:2}",
         "tv_keywords_fallback2": "{title:original} \"Сезон {season}\""
     },
+    "nordicquality": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://nordicq.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF29B6F6",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "int, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "NordicQuality",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://nordicq.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "nyaa": {
         "anime_keywords": "{title:original:en:jp} s{season:2}e{episode:2}",
         "anime_keywords2": "{title:original:en:jp} {absolute_episode:2}",
@@ -2174,6 +4044,279 @@
         "tv_keywords2": "{title:original:en:jp} {absolute_episode:2}",
         "tv_keywords_fallback": "{title:original:en:jp} s{season:2}"
     },
+    "oldtoonsworld": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://oldtoons.world/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFF7043",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "OldToonsWorld",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://oldtoons.world",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "onlyencodes": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://onlyencodes.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF66BB6A",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "OnlyEncodes+",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://onlyencodes.cc",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "peergarden": {
+        "anime_extra": [
+            "categories[]=11&categories[]=2&tmdbId",
+            "categories[]=11&categories[]=2&name",
+            "categories[]=11&categories[]=2&name",
+            "categories[]=11&categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://peergarden.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF4CAF50",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "PeerGarden",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://peergarden.org",
+        "season_extra": [
+            "categories[]=2&categories[]=11&tmdbId",
+            "categories[]=2&categories[]=11&name",
+            "categories[]=2&categories[]=11&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&categories[]=11&tmdbId",
+            "categories[]=2&categories[]=11&name",
+            "categories[]=2&categories[]=11&name",
+            "categories[]=2&categories[]=11&name",
+            "categories[]=2&categories[]=11&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "piratbit": {
         "anime_keywords": "{title:original} Сезон {season}",
         "anime_query": "",
@@ -2214,6 +4357,299 @@
         "tv_extra": "",
         "tv_extra2": "",
         "tv_keywords": "{title:original} Сезон {season}"
+    },
+    "polishtorrent": {
+        "anime_extra": [
+            "categories[]=9&tmdbId",
+            "categories[]=9&name",
+            "categories[]=9&name",
+            "categories[]=9&name",
+            "categories[]=9&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:pl} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://polishtorrent.top/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFEF5350",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "pl",
+        "languages": "pl, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:pl} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Polish Torrent",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://polishtorrent.top",
+        "season_extra": [
+            "categories[]=9&tmdbId",
+            "categories[]=9&name",
+            "categories[]=9&name",
+            "categories[]=9&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:pl} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=9&tmdbId",
+            "categories[]=9&name",
+            "categories[]=9&name",
+            "categories[]=9&name",
+            "categories[]=9&name",
+            "categories[]=9&name",
+            "categories[]=9&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:pl} s{season:2}e{episode:2}",
+            "{title:pl} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "portugas": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://portugas.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF43A047",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "pt",
+        "languages": "pt, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:pt} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Portugas",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://portugas.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "racing4everyone": {
+        "anime_extra": [
+            "tmdbId",
+            "name",
+            "name",
+            "name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://racing4everyone.eu/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFE53935",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "tmdbId",
+            "name",
+            "name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Racing4Everyone",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://racing4everyone.eu",
+        "season_extra": [
+            "tmdbId",
+            "name",
+            "name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "tmdbId",
+            "name",
+            "name",
+            "name",
+            "name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "rarbg": {
         "anime_keywords": "{title:en:original} s{season:2}e{episode:2}",
@@ -2269,6 +4705,310 @@
         "tv_extra": null,
         "tv_keywords": "{title:en:original} s{season:2}e{episode:2}",
         "tv_keywords_fallback": "{title:en:original} s{season:2}"
+    },
+    "rastastugan": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://rastastugan.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF66BB6A",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "int, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Rastastugan",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://rastastugan.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "reelflix": {
+        "anime_extra": "",
+        "anime_keywords": "",
+        "anime_query": "",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://reelflix.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFE50914",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "ReelFLiX",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://reelflix.cc",
+        "season_extra": "",
+        "season_keywords": "",
+        "season_query": "",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": "",
+        "tv_keywords": "",
+        "tv_query": ""
+    },
+    "retromoviesclub": {
+        "anime_extra": "",
+        "anime_keywords": "",
+        "anime_query": "",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://retro-movies.club/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFFA726",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Retro Movies Club",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://retro-movies.club",
+        "season_extra": "",
+        "season_keywords": "",
+        "season_query": "",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": "",
+        "tv_keywords": "",
+        "tv_query": ""
+    },
+    "rockethd": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://rocket-hd.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFF5722",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "int, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "RocketHD",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://rocket-hd.cc",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "rustorka": {
         "anime_keywords": "\"{title:en:ru:original}\" \"TV-{season}\"",
@@ -2435,7 +5175,121 @@
         "tv_keywords_fallback": "\"{title:original}\" \"Сезон {season}\"",
         "tv_keywords_fallback2": "\"{title:en:ru:original}\" {season}"
     },
+    "samaritano": {
+        "anime_extra": [
+            "categories[]=3&categories[]=2&tmdbId",
+            "categories[]=3&categories[]=2&name",
+            "categories[]=3&categories[]=2&name",
+            "categories[]=3&categories[]=2&name",
+            "categories[]=3&categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://samaritano.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF26C6DA",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "pt",
+        "languages": "pt, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:pt} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Samaritano",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://samaritano.cc",
+        "season_extra": [
+            "categories[]=2&categories[]=3&tmdbId",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&categories[]=3&tmdbId",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name",
+            "categories[]=2&categories[]=3&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:pt} s{season:2}e{episode:2}",
+            "{title:pt} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "seedpool": {
+        "anime_extra": [
+            "categories[]=6&categories[]=2&tmdbId",
+            "categories[]=6&categories[]=2&name",
+            "categories[]=6&categories[]=2&name",
+            "categories[]=6&categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "api_format": {
             "info_hash": "attributes.info_hash",
             "name": "attributes.name",
@@ -2446,28 +5300,72 @@
             "torrent": "attributes.download_link"
         },
         "base_url": "https://seedpool.org/api/torrents/filter",
-        "color": "FF00A8FF",
+        "charset": "utf-8",
+        "color": "FF80CBC4",
         "enabled": true,
-        "filter_title": true,
+        "general_extra": "name",
         "general_keywords": "{title:original}",
-        "general_query": "?api_token=PASSKEY&name=QUERY&sortField=seeders&sortDirection=desc&perPage=50",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
         "is_api": true,
-        "language": null,
+        "language": "en",
         "languages": "en",
         "login_apikey": true,
-        "movie_keywords": "{title:original} {year}",
-        "movie_query": "?api_token=PASSKEY&name=QUERY&sortField=seeders&sortDirection=desc&perPage=50",
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "name": "Seedpool",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
         "predefined": false,
         "private": true,
-        "season_keywords": "{title:original} s{season:2}",
-        "season_query": "?api_token=PASSKEY&name=QUERY&sortField=seeders&sortDirection=desc&perPage=50",
+        "root_url": "https://seedpool.org",
+        "season_extra": [
+            "categories[]=2&categories[]=6&tmdbId",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "separator": "%20",
-        "show_query": "?api_token=PASSKEY&name=QUERY&sortField=seeders&sortDirection=desc&perPage=50",
         "subpage": false,
-        "tv_keywords": "{title:original} s{season:2}e{episode:2}",
-        "tv_query": "?api_token=PASSKEY&name=QUERY&sortField=seeders&sortDirection=desc&perPage=50"
+        "tv_extra": [
+            "categories[]=2&categories[]=6&tmdbId",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name",
+            "categories[]=2&categories[]=6&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "serialz": {
         "anime_extra": "",
@@ -2511,6 +5409,198 @@
         "tv_extra": "",
         "tv_extra2": "",
         "tv_keywords": "{title:original} Сезон {season} Серия {episode}"
+    },
+    "shareisland": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:it} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://shareisland.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF26A69A",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "it",
+        "languages": "it, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:it} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "ShareIsland",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://shareisland.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:it} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:it} s{season:2}e{episode:2}",
+            "{title:it} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "skipthecommercials": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://skipthecommercials.xyz/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF29B6F6",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "SkipTheCommercials",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://skipthecommercials.xyz",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "skytorrents": {
         "anime_extra": "",
@@ -2644,6 +5734,107 @@
         "tv_keywords": "{title:original} s{season:2}e{episode:2}",
         "tv_keywords_fallback": "{title:original} Сезон {season}"
     },
+    "theoldschool": {
+        "anime_extra": [
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&tmdbId",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:fr} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://theoldschool.cc/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF5C6BC0",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "fr",
+        "languages": "fr, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&categories[]=6&tmdbId",
+            "categories[]=1&categories[]=6&name",
+            "categories[]=1&categories[]=6&name",
+            "categories[]=1&categories[]=6&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:fr} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "The Old School",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://theoldschool.cc",
+        "season_extra": [
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&tmdbId",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:fr} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&tmdbId",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name",
+            "categories[]=2&categories[]=7&categories[]=8&categories[]=9&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:fr} s{season:2}e{episode:2}",
+            "{title:fr} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "thepiratebay": {
         "anime_extra": "",
         "anime_keywords": "{title:original:en} s{season:2}e{episode:2}",
@@ -2695,6 +5886,97 @@
         "tv_keywords_fallback": "{title:original:en} s{season:2}",
         "tv_keywords_fallback2": "{title:original:en} season {season}",
         "tv_keywords_fallback3": "{title:original:en} {season:2}x01"
+    },
+    "tlzdigital": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://tlzdigital.com/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF9CCC65",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "The Leach Zone",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://tlzdigital.com",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "tntvillage": {
         "anime_keywords": "{title} s{season:2}e{episode:2}",
@@ -3037,6 +6319,97 @@
         "tv_keywords": "{title:en} s{season:2}e{episode:2}",
         "tv_keywords_fallback": "{title:en} s{season:2}"
     },
+    "torrentdesi": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://torrent.desi/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFF9800",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "int, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "DesiTorrents",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://torrent.desi",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "torrentdownloads": {
         "anime_keywords": "{title:original} s{season:2}e{episode:2}",
         "anime_keywords2": "{title} {season:2}x01|S{season:2}",
@@ -3081,6 +6454,107 @@
         "tv_keywords": "{title:original} s{season:2}e{episode:2}",
         "tv_keywords2": "{title} {season:2}x01|S{season:2}",
         "tv_keywords_fallback": "{title} s{season:2}"
+    },
+    "torrenteros": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:es} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://torrenteros.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFFF7043",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "es",
+        "languages": "es, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:es} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Torrenteros",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://torrenteros.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:es} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:es} s{season:2}e{episode:2}",
+            "{title:es} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "torrentfunk": {
         "anime_keywords": "{title:original} s{season:2}e{episode:2}",
@@ -3173,9 +6647,201 @@
         "tv_keywords2": "{imdb_id} s{season:2}e{episode:2}",
         "tv_keywords_fallback": "{title:original} s{season:2}"
     },
+    "torrenthaven": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://torrenthaven.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF42A5F5",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "TorrentHaven",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://torrenthaven.org",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "torrenthr": {
+        "anime_extra": [
+            "categories[]=31&categories[]=18&tmdbId",
+            "categories[]=31&categories[]=18&name",
+            "categories[]=31&categories[]=18&name",
+            "categories[]=31&categories[]=18&name",
+            "categories[]=31&categories[]=18&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:hr} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://www.torrenthr.org/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFEF5350",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "hr",
+        "languages": "hr, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=4&categories[]=12&categories[]=14&categories[]=17&categories[]=18&categories[]=40&tmdbId",
+            "categories[]=4&categories[]=12&categories[]=14&categories[]=17&categories[]=18&categories[]=40&name",
+            "categories[]=4&categories[]=12&categories[]=14&categories[]=17&categories[]=18&categories[]=40&name",
+            "categories[]=4&categories[]=12&categories[]=14&categories[]=17&categories[]=18&categories[]=40&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:hr} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "TorrentHR",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://www.torrenthr.org",
+        "season_extra": [
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&tmdbId",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:hr} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&tmdbId",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name",
+            "categories[]=7&categories[]=12&categories[]=18&categories[]=31&categories[]=34&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:hr} s{season:2}e{episode:2}",
+            "{title:hr} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "torrentio": {
         "enabled": true,
-        "is_api":true,
+        "is_api": true,
         "predefined": true,
         "color": "FFFFFFFF",
         "name": "Torrentio",
@@ -3482,15 +7148,203 @@
         "tv_keywords_fallback3": "{title:original:en} {season:2}x01",
         "show_query": ""
     },
+    "ulcx": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://upload.cx/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF7E57C2",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "ULCX",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://upload.cx",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
+    "utopia": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://utp.to/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FFAB47BC",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "UTOPIA",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://utp.to",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "vietmediaf": {
-        "anime_extra": "tmdbId",
-        "anime_extra_fallback": "name",
-        "anime_extra_fallback2": "name",
-        "anime_extra_fallback3": "name",
-        "anime_keywords": "{show_tmdb_id}",
-        "anime_keywords_fallback": "{title:original} s{season:2}e{episode:2}",
-        "anime_keywords_fallback2": "{title:original} {absolute_episode}",
-        "anime_keywords_fallback3": "{title:en} s{season:2}e{episode:2}",
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:vi} s{season:2}e{episode:2}"
+        ],
         "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "api_format": {
             "info_hash": "attributes.info_hash",
@@ -3502,48 +7356,80 @@
             "torrent": "attributes.download_link"
         },
         "base_url": "https://tracker.vietmediaf.store/api/torrents/filter",
-        "color": "FFE74C3C",
+        "charset": "utf-8",
+        "color": "FF00E5FF",
         "enabled": true,
-        "filter_title": false,
         "general_extra": "name",
         "general_keywords": "{title:original}",
         "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
         "is_api": true,
-        "language": null,
+        "language": "vi",
         "languages": "vi, en",
         "login_apikey": true,
-        "movie_extra": "tmdbId",
-        "movie_extra_fallback": "name",
-        "movie_extra_fallback2": "name",
-        "movie_keywords": "{tmdb_id}",
-        "movie_keywords_fallback": "{title:original} {year}",
-        "movie_keywords_fallback2": "{title:en} {year}",
-        "movie_query": "?api_token=PASSKEY&categories[]=1&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:vi} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "name": "VietMediaF",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
         "predefined": true,
         "private": true,
-        "season_extra": "tmdbId",
-        "season_extra_fallback": "name",
-        "season_extra_fallback2": "name",
-        "season_keywords": "{show_tmdb_id}",
-        "season_keywords_fallback": "{title:original} s{season:2}",
-        "season_keywords_fallback2": "{title:en} s{season:2}",
-        "season_query": "?api_token=PASSKEY&categories[]=2&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "root_url": "https://tracker.vietmediaf.store",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:vi} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "separator": "%20",
-        "show_query": "?api_token=PASSKEY&categories[]=2&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
         "subpage": false,
-        "tv_extra": "tmdbId",
-        "tv_extra_fallback": "name",
-        "tv_extra_fallback2": "name",
-        "tv_extra_fallback3": "name",
-        "tv_extra_fallback4": "name",
-        "tv_keywords": "{show_tmdb_id}",
-        "tv_keywords_fallback": "{title:original} s{season:2}e{episode:2}",
-        "tv_keywords_fallback2": "{title:original} s{season:2}",
-        "tv_keywords_fallback3": "{title:en} s{season:2}e{episode:2}",
-        "tv_keywords_fallback4": "{title:en} s{season:2}",
-        "tv_query": "?api_token=PASSKEY&categories[]=2&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:vi} s{season:2}e{episode:2}",
+            "{title:vi} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "worldwidetorrents": {
         "anime_keywords": "{title:original} s{season:2}e{episode:2}",
@@ -3735,6 +7621,107 @@
         "tv_extra": null,
         "tv_keywords": null
     },
+    "yuscene": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:hr} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://yu-scene.net/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF42A5F5",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "hr",
+        "languages": "hr, en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}",
+            "{title:hr} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "YUSCENE",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://yu-scene.net",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}",
+            "{title:hr} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}",
+            "{title:hr} s{season:2}e{episode:2}",
+            "{title:hr} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
+    },
     "zamunda": {
         "anime_keywords": "{title:original}+s{season:2}e{episode:2}",
         "anime_keywords2": "{title}+еп.{episode}",
@@ -3824,6 +7811,97 @@
         "tv_extra2": "",
         "tv_keywords": "{title:original} s{season:2}e{episode:2}",
         "tv_keywords2": "{title} еп.{episode}"
+    },
+    "zenith": {
+        "anime_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "anime_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} {absolute_episode}",
+            "{title:en} s{season:2}e{episode:2}"
+        ],
+        "anime_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "api_format": {
+            "info_hash": "attributes.info_hash",
+            "name": "attributes.name",
+            "peers": "attributes.leechers",
+            "results": "data",
+            "seeds": "attributes.seeders",
+            "size": "attributes.size",
+            "torrent": "attributes.download_link"
+        },
+        "base_url": "https://znth.cx/api/torrents/filter",
+        "charset": "utf-8",
+        "color": "FF26C6DA",
+        "enabled": true,
+        "general_extra": "name",
+        "general_keywords": "{title:original}",
+        "general_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "headers": "{'Authorization': 'Bearer ' + (client.passkey or ''), 'Accept': 'application/json'}",
+        "is_api": true,
+        "language": "en",
+        "languages": "en",
+        "login_apikey": true,
+        "login_failed": "'Unauthenticated' in response.text or response.status_code in (401, 403)",
+        "login_object": "",
+        "login_path": null,
+        "movie_extra": [
+            "categories[]=1&tmdbId",
+            "categories[]=1&name",
+            "categories[]=1&name"
+        ],
+        "movie_keywords": [
+            "{tmdb_id}",
+            "{title:original} {year}",
+            "{title:en} {year}"
+        ],
+        "movie_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "name": "Zenith",
+        "parser": {
+            "infohash": "",
+            "name": "",
+            "peers": "",
+            "row": "",
+            "seeds": "",
+            "size": "",
+            "torrent": ""
+        },
+        "predefined": false,
+        "private": true,
+        "root_url": "https://znth.cx",
+        "season_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "season_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}"
+        ],
+        "season_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100",
+        "separator": "%20",
+        "subpage": false,
+        "tv_extra": [
+            "categories[]=2&tmdbId",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name",
+            "categories[]=2&name"
+        ],
+        "tv_keywords": [
+            "{show_tmdb_id}",
+            "{title:original} s{season:2}e{episode:2}",
+            "{title:original} s{season:2}",
+            "{title:en} s{season:2}e{episode:2}",
+            "{title:en} s{season:2}"
+        ],
+        "tv_query": "?api_token=PASSKEY&EXTRA=QUERY&sortField=seeders&sortDirection=desc&perPage=100"
     },
     "zooqle": {
         "anime_keywords": "{title} s{season:2}e{episode:2}",
